@@ -1,11 +1,10 @@
-package com.maxprogramer.api.pokemon.model;
+package com.maxprogramer.api.satelites.dto;
 
 import lombok.Data;
 
 @Data
-public class Satelite {
+public class SateliteDto {
 
-    public class Root{
         private String name;
         private int id;
         private double latitude;
@@ -19,5 +18,5 @@ public class Satelite {
         private double solar_lat;
         private double solar_lon;
         private String units;
-    }
+
 }

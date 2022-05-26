@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="projeto-api" />
+        <module name="satelites-api" />
         <module name="satelite" />
       </profile>
     </annotationProcessing>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="projeto-api" options="-parameters" />
       <module name="satelite" options="-parameters" />
+      <module name="satelites-api" options="-parameters" />
     </option>
   </component>
 </project>
