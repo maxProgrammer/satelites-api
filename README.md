@@ -3,7 +3,7 @@
 > Status: Construction 🚧
 
 
-### It's a REST API that use RestTemplate to consume an external  REST API to retrieve satelites'data and after it, save the result in its database.
+### It's a REST API that uses RestTemplate to consume an external REST API to retrieve satellite data and save the result in its database.
 
 <h1 align="center">
   <img alt="Readme" title="Readme" src="https://user-images.githubusercontent.com/87916631/170592637-adbade7a-a155-4259-bb83-726a2b7dbe6a.png"/>
