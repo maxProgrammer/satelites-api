@@ -1,6 +1,5 @@
 package com.maxprogramer.api.satelites.controllers;
 
-import com.maxprogramer.api.satelites.model.SateliteModel;
 import com.maxprogramer.api.satelites.services.SateliteService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +14,9 @@ public class SateliteController {
     SateliteService sateliteService;
 
     @GetMapping("/")
-    @Operation(summary = "Consult a Satelite from API and if it there is not exist on database it will be storage in database.")
+    @Operation(summary = "Consult a satellite and add if it is not on the database and update if it is already on the database")
     public void verificarSatelite() {
+
         sateliteService.importarSatelite();
     }
 

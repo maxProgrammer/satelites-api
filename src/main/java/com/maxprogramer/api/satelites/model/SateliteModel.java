@@ -1,5 +1,6 @@
 package com.maxprogramer.api.satelites.model;
 
+import com.maxprogramer.api.satelites.dto.SateliteDto;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -44,6 +45,22 @@ public class SateliteModel implements Serializable {
         this.solar_lat = solar_lat;
         this.solar_lon = solar_lon;
         this.units = units;
+    }
+
+    public void updateSatelite(SateliteDto sateliteDto) {
+        this.id = sateliteDto.getId();
+        this.name = sateliteDto.getName();
+        this.latitude = sateliteDto.getLatitude();
+        this.longitude = sateliteDto.getLongitude();
+        this.altitude = sateliteDto.getAltitude();
+        this.velocity = sateliteDto.getVelocity();
+        this.visibility = sateliteDto.getVisibility();
+        this.footprint = sateliteDto.getFootprint();
+        this.timestamp = sateliteDto.getTimestamp();
+        this.daynum = sateliteDto.getDaynum();
+        this.solar_lat = sateliteDto.getSolar_lat();
+        this.solar_lon = sateliteDto.getSolar_lon();
+        this.units = sateliteDto.getUnits();
     }
 
     @Override

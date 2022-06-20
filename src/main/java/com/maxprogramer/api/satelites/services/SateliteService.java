@@ -6,7 +6,11 @@ import com.maxprogramer.api.satelites.repository.SateliteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.client.RestTemplate;
+
+import javax.transaction.Transactional;
+import javax.validation.Valid;
 
 @Service
 public class SateliteService {
@@ -24,7 +28,8 @@ public class SateliteService {
         save(sateliteDto);
     }
 
-    public void save(SateliteDto sateliteDto) {
+    @Transactional
+    public void save(@RequestBody @Valid SateliteDto sateliteDto) {
 
         SateliteModel possivelSateliteModel = sateliteDto.novoSatelite();
 
@@ -32,6 +37,14 @@ public class SateliteService {
 
         if (recebidoSateliteDto == null) {
             sateliteRepository.save(possivelSateliteModel);
+        } else {
+            atualizarSatelite(recebidoSateliteDto, sateliteDto);
         }
+    }
+
+    @Transactional
+    public void atualizarSatelite(SateliteModel sateliteModelEncontrado, SateliteDto sateliteDtoConsultado) {
+        sateliteModelEncontrado.updateSatelite((sateliteDtoConsultado));
+        sateliteRepository.save(sateliteModelEncontrado);
     }
 }
