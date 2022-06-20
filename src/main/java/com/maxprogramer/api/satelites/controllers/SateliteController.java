@@ -15,9 +15,9 @@ public class SateliteController {
 
     @GetMapping("/")
     @Operation(summary = "Consult a satellite and add if it is not on the database and update if it is already on the database")
-    public void verificarSatelite() {
+    public void verificarSatelite(String satelite) {
 
-        sateliteService.importarSatelite();
+        sateliteService.importarSatelite(satelite);
     }
 
 }

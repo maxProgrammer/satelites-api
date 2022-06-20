@@ -18,12 +18,12 @@ public class SateliteService {
     @Autowired
     SateliteRepository sateliteRepository;
 
-    public void importarSatelite() {
+    public void importarSatelite(String satelite) {
         RestTemplate restTemplate = new RestTemplate();
         RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
         restTemplate = restTemplateBuilder.build();
 
-        SateliteDto sateliteDto = restTemplate.getForObject("https://api.wheretheiss.at/v1/satellites/25544", SateliteDto.class);
+        SateliteDto sateliteDto = restTemplate.getForObject("https://api.wheretheiss.at/v1/satellites/" + satelite, SateliteDto.class);
 
         save(sateliteDto);
     }
